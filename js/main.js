@@ -419,14 +419,26 @@ document.addEventListener("DOMContentLoaded", () => {
     // EMAIL VALIDATION
     function validateEmail() {
         const value = email.value.trim();
+
         // Email is optional
         if (value === "") {
             clearError(email);
             return true;
         }
+
+        // Maximum 25 characters validation
+        if (value.length > 40) {
+            showError(
+                email,
+                "Email address must not exceed 40 characters."
+            );
+            return false;
+        }
+
         // Basic email format validation
         const emailPattern =
             /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
         if (!emailPattern.test(value)) {
             showError(
                 email,
@@ -434,8 +446,17 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             return false;
         }
+
         // Allowed domain extensions
-        const allowedDomains = ["com","co","in","org","net","edu","gov"];
+        const allowedDomains = [
+            "com",
+            "co",
+            "in",
+            "org",
+            "net",
+            "edu",
+            "gov"
+        ];
 
         // Get the domain extension
         const domainExtension = value
@@ -808,6 +829,15 @@ document.addEventListener('DOMContentLoaded', () => {
             showErrorMessage(
                 contactEmail,
                 'Please enter your email address.'
+            );
+            return false;
+        }
+
+        // Maximum 40 characters
+        if (value.length > 40) {
+            showErrorMessage(
+                contactEmail,
+                'Email address must not exceed 40 characters.'
             );
             return false;
         }

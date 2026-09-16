@@ -58,6 +58,31 @@ button{font-family: inherit; cursor: pointer; border: 0; background: none;}
 
 .home-container {width: 100%; max-width: 1180px; margin: auto; padding: 0.24px;}
 
+
+/* ========================== BUTTONS ================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 30px;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: .95rem;
+    border: 2px solid transparent;
+    transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover {
+    background: var(--gold-deep);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
 /* ================================= HEADER / NAVBAR (exact home match) ================================= */
 
 .site-header {
