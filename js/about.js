@@ -180,7 +180,40 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 
     // EMAIL VALIDATION
+    email.addEventListener("keydown", (event) => {
+
+    const allowedKeys = [
+        "Backspace",
+        "Delete",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "ArrowDown",
+        "Home",
+        "End",
+        "Tab"
+    ];
+
+    if (allowedKeys.includes(event.key)) {
+        return;
+    }
+
+    if (email.value.length >= 40) {
+
+        event.preventDefault();
+
+        showError(
+            email,
+            "Email address must not exceed 40 characters."
+        );
+    }
+});
+
+
+    // EMAIL VALIDATION
+
     function validateEmail() {
+
         const value = email.value.trim();
 
         // Email is optional
@@ -189,7 +222,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             return true;
         }
 
-        // Maximum 25 characters validation
+        // Maximum 40 characters validation
         if (value.length > 40) {
             showError(
                 email,
@@ -210,7 +243,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
             return false;
         }
 
-        // Allowed domain extensions
         const allowedDomains = [
             "com",
             "co",
@@ -221,14 +253,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
             "gov"
         ];
 
-        // Get the domain extension
         const domainExtension = value
             .split("@")[1]
             .split(".")
             .pop()
             .toLowerCase();
 
-        // Check whether the domain extension is allowed
         if (!allowedDomains.includes(domainExtension)) {
             showError(
                 email,
@@ -240,6 +270,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
         clearError(email);
         return true;
     }
+
+    // LIVE EMAIL VALIDATION
+    email.addEventListener("input", () => {
+        validateEmail();
+    });
+
+    email.addEventListener("blur", () => {
+        validateEmail();
+    });
     // PHONE VALIDATION
     function validatePhone() {
         const value = phone.value.trim();
