@@ -709,6 +709,7 @@ button{font-family: inherit; cursor: pointer; border: 0; background: none;}
     background: var(--base);
     color: var(--ink);
     transition: border-color .2s, box-shadow .2s;
+    resize: none;
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
     border-color:var(--green); 
@@ -1151,6 +1152,7 @@ button{font-family: inherit; cursor: pointer; border: 0; background: none;}
   background: var(--base);
   color: var(--ink);
   transition: border-color 0.2s, box-shadow 0.2s;
+  resize: none;
 }
 
 .home-message-form-group input:focus,
