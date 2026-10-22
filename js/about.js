@@ -493,6 +493,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     address.addEventListener("input", () => {
         validateAddress();
     });
+
+// This code is for event page glimpse
 const glimpseTrack = document.getElementById("glimpseTrack");
 const glimpseSlides = document.querySelectorAll(".glimpse-slide");
 const glimpsePrev = document.getElementById("glimpsePrev");

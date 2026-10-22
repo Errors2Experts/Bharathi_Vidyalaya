@@ -45,7 +45,7 @@ ul{margin: 0; padding: 0; list-style: none;}
 h1,h2,h3,h4{
     font-family: 'Fraunces', serif;
     font-weight: 600;
-    margin: 0 0.5em;
+    margin: 0 0.0;
     color: var(--ink);
     letter-spacing: -0.01em;
 }
@@ -233,6 +233,114 @@ button{font-family: inherit; cursor: pointer; border: 0; background: none;}
   border-radius:100px;
   font-weight:800;
 }
+
+
+/* ========================================
+   SCHOOL BRANDING
+======================================== */
+
+.brand-img {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.brand-emblem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 3px var(--gold-light);
+}
+
+.brand-since {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 800;
+    color: var(--gold-deep);
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.brand-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+}
+
+.brand-copy strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.brand-copy > span {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.65rem;
+    letter-spacing: 0.09rem;
+    text-transform: uppercase;
+    color: var(--green-deep);
+    font-weight: 800;
+}
+
+.brand-copy .brand-location {
+    margin-top: 3px;
+    font-size: 0.72rem;
+    letter-spacing: 0.04rem;
+    text-transform: none;
+    color: var(--green);
+    font-weight: 800;
+}
+
+/* ========================================
+   RESPONSIVE BRANDING
+======================================== */
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 10px 16px;
+    }
+
+    .brand-img {
+        gap: 10px;
+    }
+
+    .brand-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand-since {
+        font-size: 0.58rem;
+    }
+
+    .brand-copy strong {
+        font-size: 0.92rem;
+    }
+
+    .brand-copy > span {
+        font-size: 0.56rem;
+        letter-spacing: 0.04rem;
+    }
+
+    .brand-copy .brand-location {
+        font-size: 0.65rem;
+    }
+}
+
 @media (max-width:900px){
   .desktop-nav{ display:none; }
   .menu-toggle{ display:block; }
@@ -319,6 +427,26 @@ button{font-family: inherit; cursor: pointer; border: 0; background: none;}
 .home-section-title {
     font-size: clamp(1.6rem,3.2vw,2.2rem);
     margin-bottom:18px;
+}
+/* Principal name */
+.principal-name {
+    margin-bottom: 4px;
+    line-height: 1.25;
+}
+
+/* Principal qualifications */
+.principal-qualification {
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 5px 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--green-deep);
+    background: var(--green-light);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
 }
 
 /* ======================================= LEADERSHIP PROFILE SECTIONS ======================================= */
@@ -483,6 +611,54 @@ button{font-family: inherit; cursor: pointer; border: 0; background: none;}
     color: rgba(255,255,255,.7);
     margin: 0;
 }
+/* ================================= FOOTER BOTTOM ================================= */
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 22px 0;
+}
+
+.footer-bottom-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.footer-bottom-inner p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-motto {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-developer {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.developer-errors {
+    color: #ff4d4d;
+    font-weight: 800;
+}
+
+.developer-two {
+    color: #ffd700;
+    font-weight: 800;
+}
+
+.developer-experts {
+    color: #4ade80;
+    font-weight: 800;
+}
+
 @media (max-width:900px){
   .footer-top {
     grid-template-columns: 1fr 1fr;
